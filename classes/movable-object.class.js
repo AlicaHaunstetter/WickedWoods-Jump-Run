@@ -29,6 +29,9 @@ export class MovableObject extends DrawableObject {
       if (this.isAboveGround() || this.speedY > 0) {
         this.y -= this.speedY;
         this.speedY -= this.acceleration;
+        if (!this.isAboveGround()) {
+          this.y = this.groundY();
+        }
       } else {
         this.speedY = 0;
       }
@@ -36,16 +39,24 @@ export class MovableObject extends DrawableObject {
   }
 
   /**
-   * Checks whether the object is in the air.
+   * Returns the height at which the object stands on the ground.
    * A dead character lands lower.
+   * @returns {number} Vertical position of the ground.
+   */
+  groundY() {
+    if (this.isDead()) {
+      return 226;
+    } else {
+      return 215;
+    }
+  }
+
+  /**
+   * Checks whether the object is in the air.
    * @returns {boolean} True if the object is above the ground.
    */
   isAboveGround() {
-    if (this.isDead()) {
-      return this.y < 130;
-    } else {
-      return this.y < 120;
-    }
+    return this.y < this.groundY();
   }
 
   /**

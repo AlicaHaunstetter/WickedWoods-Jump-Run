@@ -5,16 +5,16 @@ import { setStoppableInterval } from "../js/intervals.js";
  * The playable character, the witch.
  */
 export class Character extends MovableObject {
-  height = 255;
-  width = 266;
+  height = 153;
+  width = 160;
   y = 0;
   speed = 10;
 
   offset = {
-    top: 60,
-    left: 150,
-    right: 20,
-    bottom: 12,
+    top: 36,
+    left: 90,
+    right: 12,
+    bottom: 7,
   };
 
   IMAGES_WALKING = [
