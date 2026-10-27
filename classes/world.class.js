@@ -174,23 +174,24 @@ export class World {
    */
   checkGameOver() {
     if (!this.gameOver && this.character.isDead()) {
-      this.endGame("lostScreen");
+      this.endGame("lostScreen", 3500);
     } else if (!this.gameOver && this.endboss.isDead()) {
-      this.endGame("wonScreen");
+      this.endGame("wonScreen", 1500);
     }
   }
 
   /**
    * Stops the game after the dead animation and shows the end screen.
    * @param {string} screenId - Id of the end screen to show.
+   * @param {number} delay - Time in milliseconds until the end screen is shown.
    */
-  endGame(screenId) {
+  endGame(screenId, delay) {
     this.gameOver = true;
     setTimeout(() => {
       stopAllIntervals();
       cancelAnimationFrame(this.animationFrameId);
       document.getElementById(screenId).classList.remove("d-none");
-    }, 1500);
+    }, delay);
   }
 
   /**

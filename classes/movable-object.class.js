@@ -42,7 +42,7 @@ export class MovableObject extends DrawableObject {
    */
   isAboveGround() {
     if (this.isDead()) {
-      return this.y < 110;
+      return this.y < 130;
     } else {
       return this.y < 120;
     }
