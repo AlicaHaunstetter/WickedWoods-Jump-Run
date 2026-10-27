@@ -2,82 +2,82 @@ import { MovableObject } from "./movable-object.class.js";
 import { setStoppableInterval } from "../js/intervals.js";
 
 /**
- * The playable character Pepe.
+ * The playable character, the witch.
  */
 export class Character extends MovableObject {
-  height = 250;
-  width = 125;
+  height = 255;
+  width = 266;
   y = 0;
   speed = 10;
 
   offset = {
-    top: 120,
-    left: 30,
-    right: 30,
-    bottom: 30,
+    top: 60,
+    left: 150,
+    right: 20,
+    bottom: 12,
   };
 
   IMAGES_WALKING = [
-    "img/2_character_pepe/2_walk/W-21.png",
-    "img/2_character_pepe/2_walk/W-22.png",
-    "img/2_character_pepe/2_walk/W-23.png",
-    "img/2_character_pepe/2_walk/W-24.png",
-    "img/2_character_pepe/2_walk/W-25.png",
-    "img/2_character_pepe/2_walk/W-26.png",
+    "img_wickedwoods/2_character_witch/2_walk/character__0000s_0000_1.png",
+    "img_wickedwoods/2_character_witch/2_walk/character__0000s_0001_2.png",
+    "img_wickedwoods/2_character_witch/2_walk/character__0000s_0002_3.png",
+    "img_wickedwoods/2_character_witch/2_walk/character__0000s_0003_4.png",
+    "img_wickedwoods/2_character_witch/2_walk/character__0000s_0004_5.png",
   ];
 
   IMAGES_JUMPING = [
-    "img/2_character_pepe/3_jump/J-31.png",
-    "img/2_character_pepe/3_jump/J-32.png",
-    "img/2_character_pepe/3_jump/J-33.png",
-    "img/2_character_pepe/3_jump/J-34.png",
-    "img/2_character_pepe/3_jump/J-35.png",
-    "img/2_character_pepe/3_jump/J-36.png",
-    "img/2_character_pepe/3_jump/J-37.png",
-    "img/2_character_pepe/3_jump/J-38.png",
-    "img/2_character_pepe/3_jump/J-39.png",
+    "img_wickedwoods/2_character_witch/3_jump/character__0001s_0000_6.png",
+    "img_wickedwoods/2_character_witch/3_jump/character__0001s_0001_7.png",
+    "img_wickedwoods/2_character_witch/3_jump/character__0001s_0002_8.png",
+    "img_wickedwoods/2_character_witch/3_jump/character__0001s_0003_9.png",
+    "img_wickedwoods/2_character_witch/3_jump/character__0001s_0004_10.png",
+    "img_wickedwoods/2_character_witch/3_jump/character__0001s_0005_11.png",
+    "img_wickedwoods/2_character_witch/3_jump/character__0001s_0006_12.png",
+    "img_wickedwoods/2_character_witch/3_jump/character__0001s_0007_13.png",
+    "img_wickedwoods/2_character_witch/3_jump/character__0001s_0008_14.png",
   ];
 
   IMAGES_HURT = [
-    "img/2_character_pepe/4_hurt/H-41.png",
-    "img/2_character_pepe/4_hurt/H-42.png",
-    "img/2_character_pepe/4_hurt/H-43.png",
+    "img_wickedwoods/2_character_witch/4_hurt/character__0004s_0000_34.png",
+    "img_wickedwoods/2_character_witch/4_hurt/character__0004s_0001_35.png",
+    "img_wickedwoods/2_character_witch/4_hurt/character__0004s_0002_36.png",
+    "img_wickedwoods/2_character_witch/4_hurt/character__0004s_0003_37.png",
+    "img_wickedwoods/2_character_witch/4_hurt/character__0004s_0004_38.png",
+    "img_wickedwoods/2_character_witch/4_hurt/character__0004s_0005_39.png",
   ];
 
   IMAGES_DEAD = [
-    "img/2_character_pepe/5_dead/D-51.png",
-    "img/2_character_pepe/5_dead/D-52.png",
-    "img/2_character_pepe/5_dead/D-53.png",
-    "img/2_character_pepe/5_dead/D-54.png",
-    "img/2_character_pepe/5_dead/D-55.png",
-    "img/2_character_pepe/5_dead/D-56.png",
-    "img/2_character_pepe/5_dead/D-57.png",
+    "img_wickedwoods/2_character_witch/5_dead/character__0005s_0000_40.png",
+    "img_wickedwoods/2_character_witch/5_dead/character__0005s_0001_41.png",
+    "img_wickedwoods/2_character_witch/5_dead/character__0005s_0002_42.png",
+    "img_wickedwoods/2_character_witch/5_dead/character__0005s_0003_43.png",
+    "img_wickedwoods/2_character_witch/5_dead/character__0005s_0004_44.png",
+    "img_wickedwoods/2_character_witch/5_dead/character__0005s_0005_45.png",
   ];
 
   IMAGES_IDLE = [
-    "img/2_character_pepe/1_idle/idle/I-1.png",
-    "img/2_character_pepe/1_idle/idle/I-2.png",
-    "img/2_character_pepe/1_idle/idle/I-3.png",
-    "img/2_character_pepe/1_idle/idle/I-4.png",
-    "img/2_character_pepe/1_idle/idle/I-5.png",
-    "img/2_character_pepe/1_idle/idle/I-6.png",
-    "img/2_character_pepe/1_idle/idle/I-7.png",
-    "img/2_character_pepe/1_idle/idle/I-8.png",
-    "img/2_character_pepe/1_idle/idle/I-9.png",
-    "img/2_character_pepe/1_idle/idle/I-10.png",
+    "img_wickedwoods/2_character_witch/1_idle/idle/character__0002s_0000_15.png",
+    "img_wickedwoods/2_character_witch/1_idle/idle/character__0002s_0001_16.png",
+    "img_wickedwoods/2_character_witch/1_idle/idle/character__0002s_0002_17.png",
+    "img_wickedwoods/2_character_witch/1_idle/idle/character__0002s_0003_18.png",
+    "img_wickedwoods/2_character_witch/1_idle/idle/character__0002s_0004_19.png",
+    "img_wickedwoods/2_character_witch/1_idle/idle/character__0002s_0005_20.png",
+    "img_wickedwoods/2_character_witch/1_idle/idle/character__0002s_0006_21.png",
   ];
 
   IMAGES_LONG_IDLE = [
-    "img/2_character_pepe/1_idle/long_idle/I-11.png",
-    "img/2_character_pepe/1_idle/long_idle/I-12.png",
-    "img/2_character_pepe/1_idle/long_idle/I-13.png",
-    "img/2_character_pepe/1_idle/long_idle/I-14.png",
-    "img/2_character_pepe/1_idle/long_idle/I-15.png",
-    "img/2_character_pepe/1_idle/long_idle/I-16.png",
-    "img/2_character_pepe/1_idle/long_idle/I-17.png",
-    "img/2_character_pepe/1_idle/long_idle/I-18.png",
-    "img/2_character_pepe/1_idle/long_idle/I-19.png",
-    "img/2_character_pepe/1_idle/long_idle/I-20.png",
+    "img_wickedwoods/2_character_witch/1_idle/long_idle/character__0003s_0000_22.png",
+    "img_wickedwoods/2_character_witch/1_idle/long_idle/character__0003s_0001_23.png",
+    "img_wickedwoods/2_character_witch/1_idle/long_idle/character__0003s_0002_24.png",
+    "img_wickedwoods/2_character_witch/1_idle/long_idle/character__0003s_0003_25.png",
+    "img_wickedwoods/2_character_witch/1_idle/long_idle/character__0003s_0004_26.png",
+    "img_wickedwoods/2_character_witch/1_idle/long_idle/character__0003s_0005_27.png",
+    "img_wickedwoods/2_character_witch/1_idle/long_idle/character__0003s_0006_28.png",
+    "img_wickedwoods/2_character_witch/1_idle/long_idle/character__0003s_0007_29.png",
+    "img_wickedwoods/2_character_witch/1_idle/long_idle/character__0003s_0008_30.png",
+    "img_wickedwoods/2_character_witch/1_idle/long_idle/character__0003s_0009_31.png",
+    "img_wickedwoods/2_character_witch/1_idle/long_idle/character__0003s_0010_32.png",
+    "img_wickedwoods/2_character_witch/1_idle/long_idle/character__0003s_0011_33.png",
   ];
 
   world;
@@ -89,7 +89,7 @@ export class Character extends MovableObject {
    * Creates the character, preloads all images and starts gravity and animations.
    */
   constructor() {
-    super().loadImage("img/2_character_pepe/2_walk/W-21.png");
+    super().loadImage("img_wickedwoods/2_character_witch/2_walk/character__0000s_0000_1.png");
     this.loadImages(this.IMAGES_WALKING);
     this.loadImages(this.IMAGES_JUMPING);
     this.loadImages(this.IMAGES_DEAD);

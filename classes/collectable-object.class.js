@@ -2,10 +2,18 @@ import { MovableObject } from "./movable-object.class.js";
 import { setStoppableInterval } from "../js/intervals.js";
 
 /**
- * A coin or a bottle that the character can collect.
+ * A crystal (coin) or a bottle that the character can collect.
  */
 export class CollectableObject extends MovableObject {
-  IMAGES_COIN = ["img/8_coin/coin_1.png", "img/8_coin/coin_2.png"];
+  IMAGES_COIN_BLUE = [
+    "img_wickedwoods/8_crystals/crystal_blue_small.png",
+    "img_wickedwoods/8_crystals/crystal_blue_big.png",
+  ];
+
+  IMAGES_COIN_PINK = [
+    "img_wickedwoods/8_crystals/crystal_pink_small.png",
+    "img_wickedwoods/8_crystals/crystal_pink_big.png",
+  ];
 
   IMAGES_BOTTLE = ["img/6_salsa_bottle/1_salsa_bottle_on_ground.png"];
 
@@ -16,11 +24,12 @@ export class CollectableObject extends MovableObject {
    * @param {string} type - "coin" or "bottle".
    * @param {number} x - Horizontal position.
    * @param {number} y - Vertical position.
+   * @param {string} [color] - Crystal color of a coin, "blue" or "pink".
    */
-  constructor(type, x, y) {
+  constructor(type, x, y, color) {
     super();
     if (type == "coin") {
-      this.setCoin();
+      this.setCoin(color);
     } else {
       this.setBottle();
     }
@@ -32,17 +41,23 @@ export class CollectableObject extends MovableObject {
   }
 
   /**
-   * Sets images, size and hitbox of a coin.
+   * Sets images, size and hitbox of a coin, shown as a crystal.
+   * @param {string} color - "blue" or "pink".
    */
-  setCoin() {
-    this.images = this.IMAGES_COIN;
-    this.width = 100;
-    this.height = 100;
+  setCoin(color) {
+    if (color == "pink") {
+      this.images = this.IMAGES_COIN_PINK;
+      this.width = 36;
+    } else {
+      this.images = this.IMAGES_COIN_BLUE;
+      this.width = 42;
+    }
+    this.height = 80;
     this.offset = {
-      top: 35,
-      left: 35,
-      right: 35,
-      bottom: 35,
+      top: 5,
+      left: 3,
+      right: 3,
+      bottom: 4,
     };
   }
 
