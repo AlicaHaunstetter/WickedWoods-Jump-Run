@@ -103,17 +103,6 @@ export class World {
     if (mo.otherDirection) {
       this.flipImageBack(mo);
     }
-    // DEBUG: hitbox of every movable object, remove later
-    if (mo.offset) {
-      this.ctx.strokeStyle = "red";
-      this.ctx.lineWidth = 2;
-      this.ctx.strokeRect(
-        mo.x + mo.offset.left,
-        mo.y + mo.offset.top,
-        mo.width - mo.offset.left - mo.offset.right,
-        mo.height - mo.offset.top - mo.offset.bottom,
-      );
-    }
   }
 
   /**
