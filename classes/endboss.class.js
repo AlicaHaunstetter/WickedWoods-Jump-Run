@@ -5,10 +5,10 @@ import { setStoppableInterval } from "../js/intervals.js";
  * The endboss. Plays an intro when first seen, then follows and attacks the character.
  */
 export class Endboss extends MovableObject {
-  height = 400;
-  width = 349;
+  height = 360;
+  width = 310;
   otherDirection = true;
-  y = -15;
+  y = 25;
   speed = 2;
   damagePerHit = 20;
 
@@ -110,7 +110,19 @@ export class Endboss extends MovableObject {
    * @returns {boolean} True after the intro as long as the endboss is alive.
    */
   canMove() {
-    return this.hadFirstContact && this.currentImage >= this.IMAGES_ALERT.length && !this.isDead();
+    return (
+      this.hadFirstContact &&
+      this.currentImage >= this.introLength() &&
+      !this.isDead()
+    );
+  }
+
+  /**
+   * Number of images in the intro, the alert images are played twice.
+   * @returns {number} Length of the intro in images.
+   */
+  introLength() {
+    return this.IMAGES_ALERT.length * 2;
   }
 
   /**
@@ -123,7 +135,7 @@ export class Endboss extends MovableObject {
       this.playAnimation(this.IMAGES_HURT);
     } else if (!this.hadFirstContact) {
       this.checkFirstContact();
-    } else if (this.currentImage < this.IMAGES_ALERT.length) {
+    } else if (this.currentImage < this.introLength()) {
       this.playAnimation(this.IMAGES_ALERT);
     } else if (this.isNearCharacter()) {
       this.playAnimation(this.IMAGES_ATTACK);
@@ -155,7 +167,8 @@ export class Endboss extends MovableObject {
    * @returns {number} Positive if the character is on the right, negative if on the left.
    */
   distanceToCharacter() {
-    let characterCenter = this.world.character.x + this.world.character.width / 2;
+    let characterCenter =
+      this.world.character.x + this.world.character.width / 2;
     let bossCenter = this.x + this.width / 2;
     return characterCenter - bossCenter;
   }

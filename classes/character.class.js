@@ -12,7 +12,7 @@ export class Character extends MovableObject {
 
   offset = {
     top: 36,
-    left: 90,
+    left: 100,
     right: 110,
     bottom: 7,
   };

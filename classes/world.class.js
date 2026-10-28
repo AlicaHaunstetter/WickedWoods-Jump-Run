@@ -61,11 +61,10 @@ export class World {
   }
 
   /**
-   * Draws background, clouds, collectables, enemies and thrown bottles.
+   * Draws background, collectables, enemies and thrown bottles.
    */
   drawLevelObjects() {
     this.addObjectsToMap(this.level.backgroundObjects);
-    this.addObjectsToMap(this.level.clouds);
     this.addObjectsToMap(this.level.coins);
     this.addObjectsToMap(this.level.bottles);
     this.addObjectsToMap(this.level.enemies);
@@ -104,8 +103,8 @@ export class World {
     if (mo.otherDirection) {
       this.flipImageBack(mo);
     }
-    // DEBUG: hitbox of the character, remove later
-    if (mo == this.character) {
+    // DEBUG: hitbox of every movable object, remove later
+    if (mo.offset) {
       this.ctx.strokeStyle = "red";
       this.ctx.lineWidth = 2;
       this.ctx.strokeRect(

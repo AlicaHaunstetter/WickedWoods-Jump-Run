@@ -1,7 +1,6 @@
 import { Level } from "../classes/level.class.js";
 import { Chicken } from "../classes/chicken.class.js";
 import { Endboss } from "../classes/endboss.class.js";
-import { Cloud } from "../classes/cloud.class.js";
 import { BackgroundObject } from "../classes/background-object.class.js";
 import { CollectableObject } from "../classes/collectable-object.class.js";
 
@@ -13,7 +12,6 @@ export let level1;
 export function initLevel() {
   level1 = new Level(
     createEnemies(),
-    [new Cloud()],
     createBackgroundObjects(),
     createCoins(),
     createBottles(),

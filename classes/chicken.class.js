@@ -11,10 +11,10 @@ export class Chicken extends MovableObject {
   y = 280;
 
   offset = {
-    top: 5,
-    left: 30,
-    right: 30,
-    bottom: 30,
+    top: 10,
+    left: 20,
+    right: 20,
+    bottom: 20,
   };
 
   IMAGES_WALKING_NORMAL = [
@@ -69,10 +69,10 @@ export class Chicken extends MovableObject {
     this.width = 50;
     this.y = 315;
     this.offset = {
-      top: 0,
-      left: 21,
-      right: 21,
-      bottom: 21,
+      top: 5,
+      left: 15,
+      right: 15,
+      bottom: 10,
     };
     this.speed = 0.5 + Math.random() * 0.5;
   }

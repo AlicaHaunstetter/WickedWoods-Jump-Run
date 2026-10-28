@@ -3,7 +3,6 @@
  */
 export class Level {
   enemies;
-  clouds;
   backgroundObjects;
   coins;
   bottles;
@@ -12,14 +11,12 @@ export class Level {
   /**
    * Creates a level.
    * @param {MovableObject[]} enemies - Chickens and the endboss.
-   * @param {Cloud[]} clouds - Clouds in the sky.
    * @param {BackgroundObject[]} backgroundObjects - Background layers.
    * @param {CollectableObject[]} coins - Coins to collect.
    * @param {CollectableObject[]} bottles - Bottles to collect.
    */
-  constructor(enemies, clouds, backgroundObjects, coins, bottles) {
+  constructor(enemies, backgroundObjects, coins, bottles) {
     this.enemies = enemies;
-    this.clouds = clouds;
     this.backgroundObjects = backgroundObjects;
     this.coins = coins;
     this.bottles = bottles;

@@ -50,14 +50,14 @@ export class CollectableObject extends MovableObject {
   setCoin(color) {
     if (color == "pink") {
       this.images = this.IMAGES_COIN_PINK;
-      this.width = 36;
+      this.width = 30;
       this.glowColor = "#ff5fd2";
     } else {
       this.images = this.IMAGES_COIN_BLUE;
-      this.width = 42;
+      this.width = 35;
       this.glowColor = "#4fc8ff";
     }
-    this.height = 80;
+    this.height = 70;
     this.offset = {
       top: 5,
       left: 3,
@@ -74,9 +74,9 @@ export class CollectableObject extends MovableObject {
     this.width = 60;
     this.height = 60;
     this.offset = {
-      top: 15,
-      left: 35,
-      right: 15,
+      top: 10,
+      left: 20,
+      right: 20,
       bottom: 9,
     };
   }
