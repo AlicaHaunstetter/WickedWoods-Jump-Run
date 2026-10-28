@@ -5,15 +5,15 @@ import { setStoppableInterval } from "../js/intervals.js";
  * The playable character, the witch.
  */
 export class Character extends MovableObject {
-  height = 153;
-  width = 160;
+  height = 130;
+  width = 250;
   y = 0;
   speed = 10;
 
   offset = {
     top: 36,
     left: 90,
-    right: 12,
+    right: 110,
     bottom: 7,
   };
 
@@ -89,7 +89,9 @@ export class Character extends MovableObject {
    * Creates the character, preloads all images and starts gravity and animations.
    */
   constructor() {
-    super().loadImage("img_wickedwoods/2_character_witch/2_walk/character__0000s_0000_1.png");
+    super().loadImage(
+      "img_wickedwoods/2_character_witch/2_walk/character__0000s_0000_1.png",
+    );
     this.loadImages(this.IMAGES_WALKING);
     this.loadImages(this.IMAGES_JUMPING);
     this.loadImages(this.IMAGES_DEAD);
@@ -116,8 +118,21 @@ export class Character extends MovableObject {
       this.handleWalking();
       this.handleJumping();
       this.updateLastMove();
+    } else if (this.isAboveGround()) {
+      this.flyBackwards();
     }
     this.world.camera_x = -this.x + 100;
+  }
+
+  /**
+   * Pushes the dead character backwards, against its viewing direction, while in the air.
+   */
+  flyBackwards() {
+    if (this.otherDirection) {
+      this.x += 3;
+    } else {
+      this.x -= 3;
+    }
   }
 
   /**
@@ -138,7 +153,11 @@ export class Character extends MovableObject {
    * Jumps when space is pressed and the last landing is finished.
    */
   handleJumping() {
-    if (this.world.keyboard.SPACE && !this.isAboveGround() && this.speedY == 0) {
+    if (
+      this.world.keyboard.SPACE &&
+      !this.isAboveGround() &&
+      this.speedY == 0
+    ) {
       this.jump();
     }
   }

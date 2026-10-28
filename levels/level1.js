@@ -31,6 +31,8 @@ function createEnemies() {
     new Chicken("normal", 1100),
     new Chicken("small", 1500),
     new Chicken("normal", 1700),
+    new Chicken("small", 2100),
+    new Chicken("normal", 2400),
     new Endboss(),
   ];
 }
@@ -59,6 +61,10 @@ function createCoins() {
     new CollectableObject("coin", 1280, 150, "blue"),
     new CollectableObject("coin", 1500, 150, "pink"),
     new CollectableObject("coin", 1580, 150, "pink"),
+    new CollectableObject("coin", 1950, 150, "blue"),
+    new CollectableObject("coin", 2030, 100, "blue"),
+    new CollectableObject("coin", 2250, 150, "pink"),
+    new CollectableObject("coin", 2330, 150, "pink"),
   ];
 }
 
@@ -77,5 +83,7 @@ function createBottles() {
     new CollectableObject("bottle", 1650, 290),
     new CollectableObject("bottle", 1800, 290),
     new CollectableObject("bottle", 2000, 290),
+    new CollectableObject("bottle", 2250, 290),
+    new CollectableObject("bottle", 2500, 290),
   ];
 }

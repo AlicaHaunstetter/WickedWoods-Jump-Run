@@ -45,9 +45,9 @@ export class MovableObject extends DrawableObject {
    */
   groundY() {
     if (this.isDead()) {
-      return 226;
+      return 250;
     } else {
-      return 215;
+      return 235;
     }
   }
 

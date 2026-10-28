@@ -12,6 +12,7 @@ import { setStoppableInterval, stopAllIntervals } from "../js/intervals.js";
 export class World {
   character = new Character();
   level = level1;
+  totalCoins = level1.coins.length;
   canvas;
   ctx;
   keyboard;
@@ -102,6 +103,17 @@ export class World {
     mo.draw(this.ctx);
     if (mo.otherDirection) {
       this.flipImageBack(mo);
+    }
+    // DEBUG: hitbox of the character, remove later
+    if (mo == this.character) {
+      this.ctx.strokeStyle = "red";
+      this.ctx.lineWidth = 2;
+      this.ctx.strokeRect(
+        mo.x + mo.offset.left,
+        mo.y + mo.offset.top,
+        mo.width - mo.offset.left - mo.offset.right,
+        mo.height - mo.offset.top - mo.offset.bottom,
+      );
     }
   }
 
@@ -287,7 +299,7 @@ export class World {
     this.level.coins.forEach((coin) => {
       if (this.character.isColliding(coin)) {
         this.character.coins++;
-        this.statusBarCoin.setPercentage(this.character.coins * 10);
+        this.statusBarCoin.setPercentage((this.character.coins / this.totalCoins) * 100);
         this.level.coins.splice(this.level.coins.indexOf(coin), 1);
       }
     });

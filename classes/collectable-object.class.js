@@ -18,6 +18,7 @@ export class CollectableObject extends MovableObject {
   IMAGES_BOTTLE = ["img/6_salsa_bottle/1_salsa_bottle_on_ground.png"];
 
   images;
+  glowColor;
 
   /**
    * Creates a collectable object at the given position.
@@ -48,9 +49,11 @@ export class CollectableObject extends MovableObject {
     if (color == "pink") {
       this.images = this.IMAGES_COIN_PINK;
       this.width = 36;
+      this.glowColor = "#ff5fd2";
     } else {
       this.images = this.IMAGES_COIN_BLUE;
       this.width = 42;
+      this.glowColor = "#4fc8ff";
     }
     this.height = 80;
     this.offset = {
@@ -74,6 +77,19 @@ export class CollectableObject extends MovableObject {
       right: 15,
       bottom: 9,
     };
+  }
+
+  /**
+   * Draws the object, crystals with a glow in their own color.
+   * @param {CanvasRenderingContext2D} ctx - The canvas context.
+   */
+  draw(ctx) {
+    if (!this.glowColor) return super.draw(ctx);
+    ctx.save();
+    ctx.shadowColor = this.glowColor;
+    ctx.shadowBlur = 15;
+    super.draw(ctx);
+    ctx.restore();
   }
 
   /**
