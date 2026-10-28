@@ -2,7 +2,7 @@ import { MovableObject } from "./movable-object.class.js";
 import { setStoppableInterval } from "../js/intervals.js";
 
 /**
- * A thrown salsa bottle that rotates in the air and splashes on impact.
+ * A thrown potion bottle that rotates in the air and splashes on impact.
  */
 export class ThrowableObject extends MovableObject {
   offset = {
@@ -13,19 +13,19 @@ export class ThrowableObject extends MovableObject {
   };
 
   IMAGES_ROTATION = [
-    "img/6_salsa_bottle/bottle_rotation/1_bottle_rotation.png",
-    "img/6_salsa_bottle/bottle_rotation/2_bottle_rotation.png",
-    "img/6_salsa_bottle/bottle_rotation/3_bottle_rotation.png",
-    "img/6_salsa_bottle/bottle_rotation/4_bottle_rotation.png",
+    "img_wickedwoods/6_potion_bottle/potion_rotation/potion__0008_potion_rotation_1.png",
+    "img_wickedwoods/6_potion_bottle/potion_rotation/potion__0009_potion_rotation_2.png",
+    "img_wickedwoods/6_potion_bottle/potion_rotation/potion__0010_potion_rotation_3.png",
+    "img_wickedwoods/6_potion_bottle/potion_rotation/potion__0011_potion_rotation_4.png",
   ];
 
   IMAGES_SPLASH = [
-    "img/6_salsa_bottle/bottle_rotation/bottle_splash/1_bottle_splash.png",
-    "img/6_salsa_bottle/bottle_rotation/bottle_splash/2_bottle_splash.png",
-    "img/6_salsa_bottle/bottle_rotation/bottle_splash/3_bottle_splash.png",
-    "img/6_salsa_bottle/bottle_rotation/bottle_splash/4_bottle_splash.png",
-    "img/6_salsa_bottle/bottle_rotation/bottle_splash/5_bottle_splash.png",
-    "img/6_salsa_bottle/bottle_rotation/bottle_splash/6_bottle_splash.png",
+    "img_wickedwoods/6_potion_bottle/potion_splash/potion__0005_splash_1.png",
+    "img_wickedwoods/6_potion_bottle/potion_splash/potion__0004_splash_2.png",
+    "img_wickedwoods/6_potion_bottle/potion_splash/potion__0003_splash_3.png",
+    "img_wickedwoods/6_potion_bottle/potion_splash/potion__0002_splash_4.png",
+    "img_wickedwoods/6_potion_bottle/potion_splash/potion__0001_splash_5.png",
+    "img_wickedwoods/6_potion_bottle/potion_splash/potion__0000_splash_6.png",
   ];
 
   splashed = false;
@@ -43,8 +43,8 @@ export class ThrowableObject extends MovableObject {
     this.x = x;
     this.y = y;
     this.otherDirection = otherDirection;
-    this.height = 100;
-    this.width = 100;
+    this.height = 60;
+    this.width = 60;
     this.throw();
   }
 

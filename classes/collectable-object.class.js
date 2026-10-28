@@ -15,7 +15,9 @@ export class CollectableObject extends MovableObject {
     "img_wickedwoods/8_crystals/crystal_pink_big.png",
   ];
 
-  IMAGES_BOTTLE = ["img/6_salsa_bottle/1_salsa_bottle_on_ground.png"];
+  IMAGES_BOTTLE = [
+    "img_wickedwoods/6_potion_bottle/potion_on_ground/potion__0006_potion_on_ground_right.png",
+  ];
 
   images;
   glowColor;
@@ -69,8 +71,8 @@ export class CollectableObject extends MovableObject {
    */
   setBottle() {
     this.images = this.IMAGES_BOTTLE;
-    this.width = 80;
-    this.height = 80;
+    this.width = 60;
+    this.height = 60;
     this.offset = {
       top: 15,
       left: 35,

@@ -5,39 +5,39 @@ import { DrawableObject } from "./drawable-object.class.js";
  */
 export class StatusBar extends DrawableObject {
   IMAGES_STATUS_HEART = [
-    "img/7_statusbars/1_statusbar/2_statusbar_health/green/0.png",
-    "img/7_statusbars/1_statusbar/2_statusbar_health/green/20.png",
-    "img/7_statusbars/1_statusbar/2_statusbar_health/green/40.png",
-    "img/7_statusbars/1_statusbar/2_statusbar_health/green/60.png",
-    "img/7_statusbars/1_statusbar/2_statusbar_health/green/80.png",
-    "img/7_statusbars/1_statusbar/2_statusbar_health/green/100.png",
+    "img_wickedwoods/7_statusbars/2_statusbar_health/statusbar__0001s_0005_health_0.png",
+    "img_wickedwoods/7_statusbars/2_statusbar_health/statusbar__0001s_0004_health_20.png",
+    "img_wickedwoods/7_statusbars/2_statusbar_health/statusbar__0001s_0003_health_40.png",
+    "img_wickedwoods/7_statusbars/2_statusbar_health/statusbar__0001s_0002_health_60.png",
+    "img_wickedwoods/7_statusbars/2_statusbar_health/statusbar__0001s_0001_health_80.png",
+    "img_wickedwoods/7_statusbars/2_statusbar_health/statusbar__0001s_0000_health_100.png",
   ];
 
   IMAGES_STATUS_COIN = [
-    "img/7_statusbars/1_statusbar/1_statusbar_coin/green/0.png",
-    "img/7_statusbars/1_statusbar/1_statusbar_coin/green/20.png",
-    "img/7_statusbars/1_statusbar/1_statusbar_coin/green/40.png",
-    "img/7_statusbars/1_statusbar/1_statusbar_coin/green/60.png",
-    "img/7_statusbars/1_statusbar/1_statusbar_coin/green/80.png",
-    "img/7_statusbars/1_statusbar/1_statusbar_coin/green/100.png",
+    "img_wickedwoods/7_statusbars/1_statusbar_crystal/statusbar__0000s_0005_crystal_0.png",
+    "img_wickedwoods/7_statusbars/1_statusbar_crystal/statusbar__0000s_0004_crystal_20.png",
+    "img_wickedwoods/7_statusbars/1_statusbar_crystal/statusbar__0000s_0003_crystal_40.png",
+    "img_wickedwoods/7_statusbars/1_statusbar_crystal/statusbar__0000s_0002_crystal_60.png",
+    "img_wickedwoods/7_statusbars/1_statusbar_crystal/statusbar__0000s_0001_crystal_80.png",
+    "img_wickedwoods/7_statusbars/1_statusbar_crystal/statusbar__0000s_0000_crystal_100.png",
   ];
 
   IMAGES_STATUS_BOTTLE = [
-    "img/7_statusbars/1_statusbar/3_statusbar_bottle/green/0.png",
-    "img/7_statusbars/1_statusbar/3_statusbar_bottle/green/20.png",
-    "img/7_statusbars/1_statusbar/3_statusbar_bottle/green/40.png",
-    "img/7_statusbars/1_statusbar/3_statusbar_bottle/green/60.png",
-    "img/7_statusbars/1_statusbar/3_statusbar_bottle/green/80.png",
-    "img/7_statusbars/1_statusbar/3_statusbar_bottle/green/100.png",
+    "img_wickedwoods/7_statusbars/3_statusbar_potion/statusbar__0002s_0005_potion_0.png",
+    "img_wickedwoods/7_statusbars/3_statusbar_potion/statusbar__0002s_0004_potion_20.png",
+    "img_wickedwoods/7_statusbars/3_statusbar_potion/statusbar__0002s_0003_potion_40.png",
+    "img_wickedwoods/7_statusbars/3_statusbar_potion/statusbar__0002s_0002_potion_60.png",
+    "img_wickedwoods/7_statusbars/3_statusbar_potion/statusbar__0002s_0001_potion_80.png",
+    "img_wickedwoods/7_statusbars/3_statusbar_potion/statusbar__0002s_0000_potion_100.png",
   ];
 
   IMAGES_STATUS_ENDBOSS = [
-    "img/7_statusbars/2_statusbar_endboss/green/green0.png",
-    "img/7_statusbars/2_statusbar_endboss/green/green20.png",
-    "img/7_statusbars/2_statusbar_endboss/green/green40.png",
-    "img/7_statusbars/2_statusbar_endboss/green/green60.png",
-    "img/7_statusbars/2_statusbar_endboss/green/green80.png",
-    "img/7_statusbars/2_statusbar_endboss/green/green100.png",
+    "img_wickedwoods/7_statusbars/4_statusbar_endboss/statusbar__0003s_0005_endboss_0.png",
+    "img_wickedwoods/7_statusbars/4_statusbar_endboss/statusbar__0003s_0004_endboss_20.png",
+    "img_wickedwoods/7_statusbars/4_statusbar_endboss/statusbar__0003s_0003_endboss_40.png",
+    "img_wickedwoods/7_statusbars/4_statusbar_endboss/statusbar__0003s_0002_endboss_60.png",
+    "img_wickedwoods/7_statusbars/4_statusbar_endboss/statusbar__0003s_0001_endboss_80.png",
+    "img_wickedwoods/7_statusbars/4_statusbar_endboss/statusbar__0003s_0000_endboss_100.png",
   ];
 
   images;
@@ -57,7 +57,7 @@ export class StatusBar extends DrawableObject {
     this.x = x;
     this.y = y;
     this.width = 200;
-    this.height = 60;
+    this.height = 50;
     this.setPercentage(percentage);
   }
 

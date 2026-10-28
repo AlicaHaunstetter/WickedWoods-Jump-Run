@@ -5,9 +5,10 @@ import { setStoppableInterval } from "../js/intervals.js";
  * A normal or small chicken that walks to the left.
  */
 export class Chicken extends MovableObject {
-  height = 70;
-  width = 70;
-  y = 295;
+  height = 90;
+  width = 90;
+  otherDirection = true;
+  y = 280;
 
   offset = {
     top: 5,
@@ -17,20 +18,24 @@ export class Chicken extends MovableObject {
   };
 
   IMAGES_WALKING_NORMAL = [
-    "img/3_enemies_chicken/chicken_normal/1_walk/1_w.png",
-    "img/3_enemies_chicken/chicken_normal/1_walk/2_w.png",
-    "img/3_enemies_chicken/chicken_normal/1_walk/3_w.png",
+    "img_wickedwoods/3_enemies_normal/enemies_normal/1_walk/enemy__0000s_0000_enemy_normal_1.png",
+    "img_wickedwoods/3_enemies_normal/enemies_normal/1_walk/enemy__0000s_0001_enemy_normal_2.png",
+    "img_wickedwoods/3_enemies_normal/enemies_normal/1_walk/enemy__0000s_0002_enemy_normal_3.png",
   ];
 
-  IMAGES_DEAD_NORMAL = ["img/3_enemies_chicken/chicken_normal/2_dead/dead.png"];
+  IMAGES_DEAD_NORMAL = [
+    "img_wickedwoods/3_enemies_normal/enemies_normal/2_dead/enemy__0000s_0003_enemy_normal_dead.png",
+  ];
 
   IMAGES_WALKING_SMALL = [
-    "img/3_enemies_chicken/chicken_small/1_walk/1_w.png",
-    "img/3_enemies_chicken/chicken_small/1_walk/2_w.png",
-    "img/3_enemies_chicken/chicken_small/1_walk/3_w.png",
+    "img_wickedwoods/3_enemies_normal/enemies_small/1_walk/enemy__0001s_0000_enemy_small_1.png",
+    "img_wickedwoods/3_enemies_normal/enemies_small/1_walk/enemy__0001s_0001_enemy_small_2.png",
+    "img_wickedwoods/3_enemies_normal/enemies_small/1_walk/enemy__0001s_0002_enemy_small_3.png",
   ];
 
-  IMAGES_DEAD_SMALL = ["img/3_enemies_chicken/chicken_small/2_dead/dead.png"];
+  IMAGES_DEAD_SMALL = [
+    "img_wickedwoods/3_enemies_normal/enemies_small/2_dead/enemy__0001s_0003_enemy_small_dead.png",
+  ];
 
   imagesWalking;
   imagesDead;

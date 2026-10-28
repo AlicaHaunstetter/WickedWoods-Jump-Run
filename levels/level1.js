@@ -42,7 +42,9 @@ function createEnemies() {
  * @returns {BackgroundObject[]} The background image.
  */
 function createBackgroundObjects() {
-  return [new BackgroundObject("img_wickedwoods/5_background/background.jpg", -100)];
+  return [
+    new BackgroundObject("img_wickedwoods/5_background/background.jpg", -100),
+  ];
 }
 
 /**
@@ -74,16 +76,16 @@ function createCoins() {
  */
 function createBottles() {
   return [
-    new CollectableObject("bottle", 300, 290),
-    new CollectableObject("bottle", 600, 290),
-    new CollectableObject("bottle", 800, 290),
-    new CollectableObject("bottle", 1000, 290),
-    new CollectableObject("bottle", 1250, 290),
-    new CollectableObject("bottle", 1500, 290),
-    new CollectableObject("bottle", 1650, 290),
-    new CollectableObject("bottle", 1800, 290),
-    new CollectableObject("bottle", 2000, 290),
-    new CollectableObject("bottle", 2250, 290),
-    new CollectableObject("bottle", 2500, 290),
+    new CollectableObject("bottle", 300, 310),
+    new CollectableObject("bottle", 600, 310),
+    new CollectableObject("bottle", 800, 310),
+    new CollectableObject("bottle", 1000, 310),
+    new CollectableObject("bottle", 1250, 310),
+    new CollectableObject("bottle", 1500, 310),
+    new CollectableObject("bottle", 1650, 310),
+    new CollectableObject("bottle", 1800, 310),
+    new CollectableObject("bottle", 2000, 310),
+    new CollectableObject("bottle", 2250, 310),
+    new CollectableObject("bottle", 2500, 310),
   ];
 }

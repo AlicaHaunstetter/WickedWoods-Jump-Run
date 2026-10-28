@@ -6,7 +6,8 @@ import { setStoppableInterval } from "../js/intervals.js";
  */
 export class Endboss extends MovableObject {
   height = 400;
-  width = 300;
+  width = 349;
+  otherDirection = true;
   y = -15;
   speed = 2;
   damagePerHit = 20;
@@ -19,44 +20,36 @@ export class Endboss extends MovableObject {
   };
 
   IMAGES_ALERT = [
-    "img/4_enemie_boss_chicken/2_alert/G5.png",
-    "img/4_enemie_boss_chicken/2_alert/G6.png",
-    "img/4_enemie_boss_chicken/2_alert/G7.png",
-    "img/4_enemie_boss_chicken/2_alert/G8.png",
-    "img/4_enemie_boss_chicken/2_alert/G9.png",
-    "img/4_enemie_boss_chicken/2_alert/G10.png",
-    "img/4_enemie_boss_chicken/2_alert/G11.png",
-    "img/4_enemie_boss_chicken/2_alert/G12.png",
+    "img_wickedwoods/4_enemy_endboss/2_alert/15.png",
+    "img_wickedwoods/4_enemy_endboss/2_alert/16.png",
+    "img_wickedwoods/4_enemy_endboss/2_alert/17.png",
+    "img_wickedwoods/4_enemy_endboss/2_alert/18.png",
   ];
 
   IMAGES_WALK = [
-    "img/4_enemie_boss_chicken/1_walk/G1.png",
-    "img/4_enemie_boss_chicken/1_walk/G2.png",
-    "img/4_enemie_boss_chicken/1_walk/G3.png",
-    "img/4_enemie_boss_chicken/1_walk/G4.png",
+    "img_wickedwoods/4_enemy_endboss/1_walk/1.png",
+    "img_wickedwoods/4_enemy_endboss/1_walk/2.png",
+    "img_wickedwoods/4_enemy_endboss/1_walk/3.png",
+    "img_wickedwoods/4_enemy_endboss/1_walk/4.png",
   ];
 
   IMAGES_ATTACK = [
-    "img/4_enemie_boss_chicken/3_attack/G13.png",
-    "img/4_enemie_boss_chicken/3_attack/G14.png",
-    "img/4_enemie_boss_chicken/3_attack/G15.png",
-    "img/4_enemie_boss_chicken/3_attack/G16.png",
-    "img/4_enemie_boss_chicken/3_attack/G17.png",
-    "img/4_enemie_boss_chicken/3_attack/G18.png",
-    "img/4_enemie_boss_chicken/3_attack/G19.png",
-    "img/4_enemie_boss_chicken/3_attack/G20.png",
+    "img_wickedwoods/4_enemy_endboss/3_attack/11.png",
+    "img_wickedwoods/4_enemy_endboss/3_attack/12.png",
+    "img_wickedwoods/4_enemy_endboss/3_attack/13.png",
+    "img_wickedwoods/4_enemy_endboss/3_attack/14.png",
   ];
 
   IMAGES_HURT = [
-    "img/4_enemie_boss_chicken/4_hurt/G21.png",
-    "img/4_enemie_boss_chicken/4_hurt/G22.png",
-    "img/4_enemie_boss_chicken/4_hurt/G23.png",
+    "img_wickedwoods/4_enemy_endboss/4_hurt/9.png",
+    "img_wickedwoods/4_enemy_endboss/4_hurt/10.png",
   ];
 
   IMAGES_DEAD = [
-    "img/4_enemie_boss_chicken/5_dead/G24.png",
-    "img/4_enemie_boss_chicken/5_dead/G25.png",
-    "img/4_enemie_boss_chicken/5_dead/G26.png",
+    "img_wickedwoods/4_enemy_endboss/5_dead/5.png",
+    "img_wickedwoods/4_enemy_endboss/5_dead/6.png",
+    "img_wickedwoods/4_enemy_endboss/5_dead/7.png",
+    "img_wickedwoods/4_enemy_endboss/5_dead/8.png",
   ];
 
   world;
@@ -87,14 +80,15 @@ export class Endboss extends MovableObject {
 
   /**
    * Walks in the current viewing direction once the intro is finished.
+   * The images look to the right, so otherDirection means walking to the left.
    */
   moveEndboss() {
     if (this.canMove()) {
       this.updateDirection();
       if (this.otherDirection) {
-        this.moveRight();
-      } else {
         this.moveLeft();
+      } else {
+        this.moveRight();
       }
     }
   }
@@ -105,8 +99,8 @@ export class Endboss extends MovableObject {
   updateDirection() {
     let timePassed = new Date().getTime() - this.lastTurn;
     let characterIsRight = this.distanceToCharacter() > 0;
-    if (timePassed > 2000 && characterIsRight != this.otherDirection) {
-      this.otherDirection = characterIsRight;
+    if (timePassed > 2000 && characterIsRight == this.otherDirection) {
+      this.otherDirection = !characterIsRight;
       this.lastTurn = new Date().getTime();
     }
   }
